@@ -20,6 +20,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.header-logo {
+  color: #ffffff;
+}
 .header-nav {
   margin-left: 60px;
   margin-right: auto;
@@ -68,23 +71,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-.search-input::-moz-placeholder {
-  color: #bfbfbf;
-}
-.search-input::-webkit-input-placeholder {
-  color: #bfbfbf;
-}
-.search-input:-ms-input-placeholder {
-  color: #bfbfbf;
-}
-.search-input::-ms-input-placeholder {
-  color: #bfbfbf;
-}
 .search-input::placeholder {
   color: #bfbfbf;
-}
-.menu-toggle {
-  display: none;
 }
 .content {
   max-width: 1200px;
@@ -94,9 +82,12 @@ body {
   align-items: flex-start;
   justify-content: space-between;
 }
+.title {
+  color: #595959;
+}
 .posts {
-  width: 67%;
-  display: none;
+  width: 45%;
+  display: block;
 }
 
 .posts.visible {
@@ -201,76 +192,6 @@ body {
   line-height: 20px;
 }
 
-.sidebar {
-  width: 31%;
-}
-
-.login {
-  background-color: #fafafa;
-  border: 1px solid #e8e8e8;
-  padding: 15px 25px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-title {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #595959;
-}
-
-.login-input {
-  display: block;
-  background-color: #fff;
-  border: 1px solid #e8e8e8;
-  padding: 5px 15px;
-  margin-bottom: 15px;
-}
-
-.login-forget {
-  text-align: center;
-  font-size: 12px;
-  text-decoration: none;
-  color: #757575;
-  margin-bottom: 10px;
-  font-style: italic;
-}
-
-.login-signin {
-  background-color: #fa8c16;
-  border: none;
-  border-radius: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  line-height: 32px;
-  font-size: 12px;
-  margin-bottom: 15px;
-}
-
-.login-signin:hover {
-  filter: opacity(80%);
-}
-
-.login-signin:active {
-  filter: brightness(85%);
-}
-
-.login-signup {
-  color: #fa8c16;
-  text-align: center;
-  font-size: 14px;
-  text-decoration: none;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
 .user {
   background-color: #fafafa;
   border: 1px solid #e8e8e8;
@@ -357,8 +278,12 @@ body {
   height: 20px;
   fill: #000;
 }
+
+.sidebar {
+  width: 25%;
+}
 .sidebar-nav {
-  display: none;
+  display: block;
   background-color: #fff;
 }
 .sidebar-menu {
@@ -411,17 +336,6 @@ body {
   height: 11px;
   fill: #ffc53d;
 }
-.button-new-post {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.button-new-post.visible {
-  display: flex;
-}
 
 .icon-fire {
   fill: #fff;
@@ -433,6 +347,7 @@ body {
   background: #ffffff;
   border: 1px solid #e8e8e8;
   margin-top: 20px;
+  text-align: justify;
 }
 .card-header {
   background: #fafafa;
@@ -445,6 +360,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: #595959;
+  text-align: center;
 }
 .card-body {
   padding: 22px 40px 20px 25px;
@@ -463,36 +379,11 @@ body {
   color: #262626;
   margin: 10px 0;
 }
-.ad {
-  display: block;
-  background-color: #fff;
-  background-image: url("../img/promo.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  width: 100%;
-  height: 260px;
-  border: 1px solid #e8e8e8;
-  margin-top: 20px;
-  position: relative;
-}
-.ad::before {
-  content: "Реклама";
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: #c4c4c4;
-  padding-left: 26px;
-  padding-right: 26px;
-  font-size: 12px;
-  line-height: 20px;
-  text-align: center;
-  color: #ffffff;
-}
+
 .add-post {
-  display: none;
+  display: block;
   flex-direction: column;
-  width: 67%;
+  width: 25%;
 }
 
 .add-post.visible {
@@ -505,7 +396,7 @@ body {
   border: 1px solid #e8e8e8;
   padding: 23px 30px;
   margin-bottom: 16px;
-  resize: none;
+  width: 100%;
 }
 .add-text {
   min-height: 362px;
