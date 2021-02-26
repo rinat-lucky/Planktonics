@@ -1,3 +1,5 @@
+@import 'normalize.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -94,7 +96,12 @@ body {
 .posts.visible {
   display: block;
 }
-
+.post-wrapper {
+  display: none;
+}
+.post-wrapper-active {
+  display: block;
+}
 .post {
   background-color: #fff;
   border: 1px solid #e8e8e8;
@@ -152,6 +159,9 @@ body {
 }
 .post-button .icon {
   fill: #8c8c8c;
+}
+.icon {
+  color: #8c8c8c;
 }
 .icon-like,
 .icon-comment {
