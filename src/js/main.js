@@ -177,7 +177,7 @@ const toggleAuthDom = () => {
 	  	userNameElem.textContent = user.name;
 	  	userAvatarElem.src = user.photo || DEFAULT_PHOTO;
 		addPostElem.classList.add('visible');
-		// localStorage.setItem('users', serializedUsers);
+		// localStorage.setItem('users', serializedUsers); 
 	} else {
 	  	loginElem.style.display = '';
 	  	userElem.style.display = 'none';
