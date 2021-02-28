@@ -28,6 +28,17 @@
 
     <aside class="sidebar">
 
+      <div class="login">
+        <form class="login-form">
+          <h2 class="login-title">Авторизация</h2>
+          <input type="email" class="login-input login-email" name='email' minlength="3" required placeholder="Введите e-mail">
+          <input type="password" class="login-input login-password" name='password' minlength="3" required placeholder="Введите пароль">
+          <a href="#" class="login-forget">Забыли пароль?</a>
+          <button type='submit' class="login-signin">Войти</button>
+          <a href="#" class="login-signup">Регистрация</a>
+        </form>
+      </div>
+
       <div class="user">
         <div class="user-container">
           <a href="#" class="user-info">
@@ -46,8 +57,31 @@
             </svg>
           </a>
         </div>
+
+        <form class="edit-container">
+          <h2 class="edit-title">Редактировать</h2>
+
+          <label class="edit-label">Ваш логин
+            <input type="text" 
+              class="edit-input edit-username" 
+              name="username" 
+              minlength="3" 
+              placeholder="логин"
+              required>
+          </label>
+
+          <label class="edit-label">Ваше фото
+            <input type="text" 
+              class="edit-input edit-photo" 
+              name="photo" 
+              placeholder="url-photo">
+          </label>
+
+          <button class="edit-btn">Сохранить</button>
+        </form>
       </div>
       <!-- /.user -->
+      
       <nav class="sidebar-nav">
         <ul class="sidebar-menu">
           <li class="sidebar-menu-item">

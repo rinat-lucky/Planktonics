@@ -1,14 +1,15 @@
 @import 'normalize.scss';
+@import 'variables.scss';
 
 * {
   box-sizing: border-box;
 }
 body {
-  font-family: sans-serif;
-  background: #e5e5e5;
+  font-family: 'Arial', sans-serif;
+  background: rgba($main-color, 0.15);  
 }
 .header {
-  background: #fa8c16;
+  background: rgba($main-color, 0.8); 
   padding-top: 16px;
   padding-bottom: 16px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
@@ -59,6 +60,9 @@ body {
   font-size: 14px;
   line-height: 22px;
   padding-left: 12px;
+}
+.search-icon {
+  color: $main-color;
 }
 .search-button {
   height: 100%;
@@ -202,8 +206,73 @@ body {
   font-size: 12px;
   line-height: 20px;
 }
+.login {
+  background-color: #fafafa;
+  border: 1px solid #e8e8e8;
+  padding: 15px 25px;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #595959;
+}
+
+.login-input {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  padding: 5px 15px;
+  margin-bottom: 15px;
+}
+
+.login-forget {
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+  color: #757575;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.login-signin {
+  background-color: $main-color;
+  border: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  line-height: 32px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.login-signin:hover {
+  filter: opacity(80%);
+}
+
+.login-signin:active {
+  filter: brightness(85%);
+}
+
+.login-signup {
+  color: $main-color;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
 .user {
+  display: none;
   background-color: #fafafa;
   border: 1px solid #e8e8e8;
   padding: 15px 25px;
@@ -220,6 +289,7 @@ body {
   align-items: center;
   text-decoration: none;
   margin-right: auto;
+  max-width: 128px;
 }
 .user-avatar {
   border-radius: 50%;
@@ -247,7 +317,7 @@ body {
 
 .edit-title {
   text-align: center;
-  margin-bottom: 10px;
+  margin: 20px 0;
   font-size: 16px;
   font-weight: 600;
   color: #595959;
@@ -257,18 +327,18 @@ body {
 .edit-label {
   display: block;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .edit-input {
   display: block;
-  margin: 0 auto;
+  margin: 5px auto;
   width: 100%;
   padding: 5px 10px;
 }
 
 .edit-btn {
-  background-color: #fa8c16;
+  background-color: $main-color;
   border: none;
   border-radius: 2px;
   text-transform: uppercase;
@@ -296,6 +366,7 @@ body {
 .sidebar-nav {
   display: block;
   background-color: #fff;
+  margin-top: 20px;
 }
 .sidebar-menu {
   margin: 0;
@@ -319,10 +390,10 @@ body {
 }
 .sidebar-menu-link.active {
   background-color: #fffbe6;
-  border-right: 3px solid #faad14;
+  border-right: 3px solid rgba($main-color, 0.8);
 }
 .button {
-  background: #faad14;
+  background: rgba($main-color, 0.8);
   border-radius: 4px;
   border: none;
   text-decoration: none;
@@ -335,9 +406,9 @@ body {
 }
 .button-outline {
   background: #ffffff;
-  border: 1px solid #ffc53d;
+  border: 1px solid rgba($main-color, 0.6);
   border-radius: 4px;
-  color: #ffc53d;
+  color: rgba($main-color, 0.6);
   padding-left: 16px;
   padding-right: 16px;
   cursor: pointer;
@@ -345,7 +416,7 @@ body {
 .button-outline .icon {
   width: 14px;
   height: 11px;
-  fill: #ffc53d;
+  fill: rgba($main-color, 0.6);
 }
 
 .icon-fire {
@@ -392,7 +463,7 @@ body {
 }
 
 .add-post {
-  display: block;
+  display: none;
   flex-direction: column;
   width: 25%;
 }
