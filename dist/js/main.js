@@ -15,6 +15,7 @@ const editUserName = document.querySelector('.edit-username');
 const editPhotoURL = document.querySelector('.edit-photo');
 const postsWrapper = document.querySelectorAll('.post-wrapper');
 const addPostElem = document.querySelector('.add-post');
+const guestBlock = document.querySelector('.add-post-guest');
 let tabs = document.querySelectorAll('.sidebar-menu-link');
 let tabsContent = document.querySelectorAll('.posts-chat');
 let tabsParent = document.querySelector('.sidebar-menu');
@@ -60,7 +61,7 @@ tabsParent.addEventListener('click', function(event) {
 const setUsers = {
 	user: {
 		name: '',
-		photo: ''
+		photo: DEFAULT_PHOTO
 	},
 	logIn(email) {
 		if (!regExpValidEmail.test(email)) {
@@ -162,8 +163,12 @@ const showAllPosts = function () {
 	const deleteBtns = document.querySelectorAll('.delete');
 	deleteBtns.forEach((item) => {
 		item.addEventListener('click', () => {
-			const post = item.closest('.post');
-			post.remove();
+			if (setUsers.user) {
+				const post = item.closest('.post');
+				post.remove();
+			} else {
+				alert('Для отправки/удаления сообщений необходимо пройти процедуру авторизации/регистрации');
+			}
 		});
 	});
 	return;
@@ -176,12 +181,13 @@ const toggleAuthDom = () => {
 	  	userElem.style.display = 'block';
 	  	userNameElem.textContent = user.name;
 	  	userAvatarElem.src = user.photo || DEFAULT_PHOTO;
-		addPostElem.classList.add('visible');
-		// localStorage.setItem('users', serializedUsers);
+		addPostElem.classList.add('visible'); 
+		guestBlock.classList.add('invisible');
 	} else {
 	  	loginElem.style.display = '';
 	  	userElem.style.display = 'none';
 	  	addPostElem.classList.remove('visible');
+		guestBlock.classList.remove('invisible');
 	}
 };
 

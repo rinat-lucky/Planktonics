@@ -276,12 +276,14 @@ body {
   background-color: #fafafa;
   border: 1px solid #e8e8e8;
   padding: 15px 25px;
+  padding-bottom: 0;
 }
 
 .user-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 15px;
 }
 
 .user-info {
@@ -313,6 +315,7 @@ body {
 
 .edit-container.visible {
   display: block;
+  border-top: 1px solid $main-color;
 }
 
 .edit-title {
@@ -345,7 +348,7 @@ body {
   cursor: pointer;
   line-height: 32px;
   font-size: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -467,11 +470,28 @@ body {
   flex-direction: column;
   width: 25%;
 }
-
 .add-post.visible {
   display: flex;
 }
-
+.add-post-guest {
+  display: block;
+  width: 25%;
+  font-size: 1em;
+  line-height: 1.15;
+  div {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    padding: 23px 30px;
+    line-height: 2;
+    span {
+      display: block;
+    }
+  }
+}
+.add-post-guest.invisible {
+  display: none;
+}
 .add-title,
 .add-text, .add-tags {
   background: #ffffff;
