@@ -25,6 +25,7 @@
     "not dead"
   ],
   "dependencies": {
+    "git-cli": "^0.11.0",
     "jshint": "^2.12.0"
   },
   "repository": {

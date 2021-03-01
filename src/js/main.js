@@ -90,11 +90,12 @@ const setUsers = {
 const setPosts = {
 	allPosts: [],
 	addPost(title, text, handler) {
+		const user = setUsers.user.name;
 		this.allPosts.unshift({
 			title, 
 			text, 
-			date: new Date().toLocaleString(), 
-			likes: 0
+			user,
+			date: new Date().toLocaleString()
 		});
 		if (handler) {
 			handler();
@@ -119,13 +120,11 @@ const showAllPosts = function () {
 				<div class="post-footer">
 					<div class="post-buttons">
 						<button class="post-button likes">
-							<svg width="19" height="20" class="icon icon-like">
-								<use xlink:href="img/icons.svg#like"></use>
-							</svg>
+							<img src="img/like.svg" alt="like" class='icon icon-like'>
 							<span class="likes-counter">${likes}</span>
 						</button>
 						<button class="post-button delete">
-							<img src="img/delete.svg" alt="delete" width="19" height="20" class='icon'>
+							<img src="img/delete.svg" alt="delete" width="19" height="20" class='icon icon-delete'>
 						</button>
 					</div>
 					<div class="post-author">
@@ -145,21 +144,6 @@ const showAllPosts = function () {
 	const serializedPosts = JSON.stringify(setPosts.allPosts);
 	localStorage.setItem('all posts', serializedPosts);
 
-	// const serializedPosts = document.querySelectorAll('.post');
-	// serializedPosts.forEach(function(item, i) { 
-	// 	const serializedPostAuthor = JSON.stringify(`${item[i].userName}`);
-	// 	const serializedPostContent = JSON.stringify(`${item[i].title}: ${item[i].text}`);
-	// 	localStorage.setItem(serializedPostAuthor, serializedPostContent);
-	// });
-
-
-	// area.value = localStorage.getItem('area');
-    // area.oninput = () => {
-    //   localStorage.setItem('area', area.value)
-    // };
-
-
-
 	const deleteBtns = document.querySelectorAll('.delete');
 	deleteBtns.forEach((item) => {
 		item.addEventListener('click', () => {
@@ -171,7 +155,6 @@ const showAllPosts = function () {
 			}
 		});
 	});
-	return;
 };
 
 const toggleAuthDom = () => {

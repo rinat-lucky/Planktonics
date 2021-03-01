@@ -96,10 +96,6 @@ body {
   width: 45%;
   display: block;
 }
-
-.posts.visible {
-  display: block;
-}
 .post-wrapper {
   display: none;
 }
@@ -111,7 +107,6 @@ body {
   border: 1px solid #e8e8e8;
   margin-bottom: 30px;
 }
-
 .post-body {
   padding-top: 35px;
   padding-left: 35px;
@@ -131,22 +126,6 @@ body {
   font-size: 14px;
   line-height: 22px;
 }
-.tags {
-  margin-bottom: 22px;
-  color: #bfbfbf;
-}
-.tag {
-  color: #bfbfbf;
-  font-size: 14px;
-  line-height: 22px;
-  margin-left: 10px;
-  text-decoration: none;
-}
-
-.tag:first-child {
-  margin-left: 0;
-}
-
 .post-footer {
   border-top: 1px solid #e8e8e8;
   background: #fafafa;
@@ -161,15 +140,15 @@ body {
   display: flex;
   align-items: center;
 }
-.post-button .icon {
-  fill: #8c8c8c;
-}
 .icon {
   color: #8c8c8c;
 }
-.icon-like,
-.icon-comment {
-  margin-right: 6px;
+.icon-like {
+  margin-right: 8px;
+}
+.icon-edit, .icon-exit, .icon-like, .icon-delete {
+  width: 20px;
+  height: 20px;
 }
 .post-button {
   background-color: transparent;
@@ -206,6 +185,7 @@ body {
   font-size: 12px;
   line-height: 20px;
 }
+
 .login {
   background-color: #fafafa;
   border: 1px solid #e8e8e8;
@@ -213,12 +193,10 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
 .login-form {
   display: flex;
   flex-direction: column;
 }
-
 .login-title {
   text-align: center;
   margin-bottom: 20px;
@@ -226,7 +204,6 @@ body {
   font-weight: 600;
   color: #595959;
 }
-
 .login-input {
   display: block;
   background-color: #fff;
@@ -234,7 +211,6 @@ body {
   padding: 5px 15px;
   margin-bottom: 15px;
 }
-
 .login-forget {
   text-align: center;
   font-size: 12px;
@@ -243,7 +219,6 @@ body {
   margin-bottom: 10px;
   font-style: italic;
 }
-
 .login-signin {
   background-color: $main-color;
   border: none;
@@ -254,15 +229,12 @@ body {
   font-size: 12px;
   margin-bottom: 15px;
 }
-
 .login-signin:hover {
   filter: opacity(80%);
 }
-
 .login-signin:active {
   filter: brightness(85%);
 }
-
 .login-signup {
   color: $main-color;
   text-align: center;
@@ -271,27 +243,27 @@ body {
   margin-bottom: 10px;
   text-transform: uppercase;
 }
+
 .user {
   display: none;
   background-color: #fafafa;
   border: 1px solid #e8e8e8;
-  padding: 15px 25px;
-  padding-bottom: 0;
+  padding: 15px 20px 0 20px;
 }
-
 .user-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 15px;
+  flex-wrap: wrap;
 }
-
 .user-info {
   display: flex;
   align-items: center;
   text-decoration: none;
-  margin-right: auto;
-  max-width: 128px;
+  margin-right: 10px;
+  padding-bottom: 15px;
+  min-height: 50px;
+  flex-wrap: wrap;
 }
 .user-avatar {
   border-radius: 50%;
@@ -304,20 +276,21 @@ body {
   line-height: 24px;
   color: #595959;
 }
+.user-icon {
+  padding-bottom: 15px;
+}
 
 .edit {
   margin-right: 10px;
+  text-decoration: none;
 }
-
 .edit-container {
   display: none;
 }
-
 .edit-container.visible {
   display: block;
   border-top: 1px solid $main-color;
 }
-
 .edit-title {
   text-align: center;
   margin: 20px 0;
@@ -326,20 +299,17 @@ body {
   color: #595959;
   text-transform: uppercase;
 }
-
 .edit-label {
   display: block;
   text-align: center;
   margin-bottom: 15px;
 }
-
 .edit-input {
   display: block;
   margin: 5px auto;
   width: 100%;
   padding: 5px 10px;
 }
-
 .edit-btn {
   background-color: $main-color;
   border: none;
@@ -352,15 +322,9 @@ body {
   width: 100%;
 }
 
-.icon-edit {
-  width: 20px;
-  height: 20px;
-}
-
-.icon-exit {
-  width: 20px;
-  height: 20px;
-  fill: #000;
+.exit {
+  position: relative;
+  right: 0;
 }
 
 .sidebar {
@@ -395,6 +359,7 @@ body {
   background-color: #fffbe6;
   border-right: 3px solid rgba($main-color, 0.8);
 }
+
 .button {
   background: rgba($main-color, 0.8);
   border-radius: 4px;
@@ -422,12 +387,6 @@ body {
   fill: rgba($main-color, 0.6);
 }
 
-.icon-fire {
-  fill: #fff;
-  width: 11px;
-  height: 13px;
-  margin-right: 10px;
-}
 .card {
   background: #ffffff;
   border: 1px solid #e8e8e8;
@@ -493,7 +452,7 @@ body {
   display: none;
 }
 .add-title,
-.add-text, .add-tags {
+.add-text {
   background: #ffffff;
   border: 1px solid #e8e8e8;
   padding: 23px 30px;
@@ -511,20 +470,8 @@ body {
 .add-post .button-outline {
   margin-right: 1%;
 }
+
 @media (max-width: 990px) {
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    margin-left: 12px;
-  }
-  .menu-toggle span {
-    height: 2px;
-    width: 100%;
-    background-color: #fff;
-  }
   .header {
     position: fixed;
     z-index: 100;
@@ -567,6 +514,7 @@ body {
     margin: auto;
   }
 }
+
 @media (max-width: 676px) {
   .add-buttons {
     display: flex;
@@ -596,7 +544,6 @@ body {
     order: 2;
     text-align: left;
   }
-
   .add-button {
     width: 100%;
   }

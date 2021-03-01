@@ -47,15 +47,15 @@
           </a>
           <!-- /.user-info -->
 
-          <a href="#" class="edit">
-            <img src="img/edit-button.svg" alt="edit" class="icon icon-edit">
-          </a>
-
-          <a href="#" class="exit">
-            <svg class="icon icon-exit">
-              <use xlink:href="img/icons.svg#exit"></use>
-            </svg>
-          </a>
+          <div class="user-icon">
+            <a href="#" class="edit">
+              <img src="img/edit-button.svg" alt="edit" class="icon icon-edit">
+            </a>
+  
+            <a href="#" class="exit">
+              <img src="img/exit.svg" alt="exit" class="icon icon-exit">
+            </a>
+          </div>
         </div>
 
         <form class="edit-container">
@@ -120,10 +120,8 @@
             </div>
             <div class="post-footer">
               <div class="post-buttons">
-                <button class="post-button likes">
-                  <svg width="19" height="20" class="icon icon-like">
-                    <use xlink:href="img/icons.svg#like"></use>
-                  </svg>
+                <button class="post-button">
+                  <img src="img/like.svg" alt="like" class="icon icon-like">
                   <span class="likes-counter">1</span>
                 </button>
               </div>
@@ -150,9 +148,7 @@
             <div class="post-footer">
               <div class="post-buttons">
                 <button class="post-button likes">
-                  <svg width="19" height="20" class="icon icon-like">
-                    <use xlink:href="img/icons.svg#like"></use>
-                  </svg>
+                  <img src="img/like.svg" alt="like" class="icon icon-like">
                   <span class="likes-counter">33</span>
                 </button>
               </div>
@@ -176,9 +172,6 @@
       <textarea name="text" class="add-text" placeholder="Текст сообщения"></textarea>
       <div class="add-buttons">
         <button type="submit" class="button add-button">
-          <svg class="icon icon-fire">
-            <use xlink:href="img/icons.svg#fire"></use>
-          </svg>
           Отправить сообщение
         </button>
       </div>
