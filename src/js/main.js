@@ -73,7 +73,8 @@ const setUsers = {
 		}
 	},
 	logOut() {
-		setUsers.user = undefined;
+		// setUsers.user = undefined;
+		delete setUsers.user;
 		toggleAuthDom();
 	},
 	editUser(nameEdit, photoEdit) {
